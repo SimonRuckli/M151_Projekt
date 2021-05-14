@@ -30,7 +30,7 @@ dependencies {
 	implementation 'com.amazonaws:aws-java-sdk-s3:1.11.981'
 }
 
-def db_url = 'jdbc:postgresql://localhost:5432/articleShop'
+def db_url = 'jdbc:postgresql://localhost:5432/webshop'
 def db_user = 'admin'
 def db_password = 'secret'
 

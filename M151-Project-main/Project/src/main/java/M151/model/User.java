@@ -6,7 +6,7 @@ import org.hibernate.annotations.ColumnTransformer;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "meeting_user")
+@Table(name = "user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_sequence")

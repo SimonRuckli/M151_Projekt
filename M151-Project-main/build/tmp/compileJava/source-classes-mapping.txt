@@ -8,3 +8,19 @@ M151/model/Buys.java
  M151.model.Buys
 M151/M151Application.java
  M151.M151Application
+M151/repo/UserRepo.java
+ M151.repo.UserRepo
+M151/conf/WebSecurityConfig.java
+ M151.conf.WebSecurityConfig
+M151/controller/UserController.java
+ M151.controller.UserController
+M151/auth/PgAuthenticationProvider.java
+ M151.auth.PgAuthenticationProvider
+M151/service/LoginService.java
+ M151.service.LoginService
+M151/repo/ArticleRepo.java
+ M151.repo.ArticleRepo
+M151/conf/RepoRestConfig.java
+ M151.conf.RepoRestConfig
+M151/service/UserService.java
+ M151.service.UserService

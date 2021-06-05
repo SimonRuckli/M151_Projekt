@@ -11,8 +11,13 @@ public class Buys {
     private long purchaseID;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private M151.model.Article article;
+    private Article article;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private User user;
+
+    public Buys(Article article, User user) {
+        this.article = article;
+        this.user = user;
+    }
 }

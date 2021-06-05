@@ -33,6 +33,8 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
 
+    public long getId() { return userID; }
+
     public String getUsername() {
         return username;
     }

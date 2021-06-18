@@ -34,4 +34,10 @@ public class ArticleController {
     public Article add(@RequestBody final Article article) {
         return articleService.add(article);
     }
+
+    @PutMapping("/{id}")
+    @PreAuthorize("hasAuthority('Admin')")
+    public Article update(@PathVariable final long id, @RequestBody final Article article) {
+        return articleService.update(id, article);
+    }
 }

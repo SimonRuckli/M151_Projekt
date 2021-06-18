@@ -2,6 +2,7 @@ package M151.controller;
 
 import M151.model.User;
 import M151.repo.UserRepo;
+import M151.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
@@ -17,11 +18,13 @@ import java.util.stream.StreamSupport;
 @RequestMapping(path = "/users")
 @PreAuthorize("hasAuthority('CustomerI') or hasAuthority('Admin')")
 public class UserController {
-    private final UserRepo userService;
+    private final UserRepo userRepo;
+    private final UserService userService;
 
     @Autowired
-    public UserController(final UserRepo userRepo) {
-        this.userService = userRepo;
+    public UserController(final UserRepo userRepo, final UserService userService) {
+        this.userRepo = userRepo;
+        this.userService = userService;
     }
 
     @GetMapping("/info")
@@ -33,7 +36,7 @@ public class UserController {
     @GetMapping("/")
     @PreAuthorize("hasAuthority('Admin')")
     public List<User> getAll() {
-        final Iterable<User> users = userService.findAll();
+        final Iterable<User> users = userRepo.findAll();
         return StreamSupport
                 .stream(users.spliterator(), false)
                 .collect(Collectors.toList());
@@ -42,6 +45,12 @@ public class UserController {
     @PostMapping("/")
     @PreAuthorize("hasAuthority('Admin')")
     public User add(@RequestBody final User user) {
-        return userService.save(user);
+        return userRepo.save(user);
+    }
+
+    @PutMapping("/{id}")
+    @PreAuthorize("hasAuthority('Admin')")
+    public User update(@PathVariable final long id, @RequestBody final User user) {
+        return userService.update(id, user);
     }
 }

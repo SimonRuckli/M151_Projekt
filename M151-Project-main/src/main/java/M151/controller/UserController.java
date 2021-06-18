@@ -15,7 +15,7 @@ import java.util.stream.StreamSupport;
 
 @RestController
 @RequestMapping(path = "/users")
-@PreAuthorize("hasAuthority('Customer') or hasAuthority('Admin')")
+@PreAuthorize("hasAuthority('CustomerI') or hasAuthority('Admin')")
 public class UserController {
     private final UserRepo userService;
 

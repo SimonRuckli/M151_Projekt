@@ -20,19 +20,19 @@ M151/repo/UserRepo.java
  M151.repo.UserRepo
 M151/model/User.java
  M151.model.User
+M151/service/LoginService.java
+ M151.service.LoginService
+M151/service/UserService.java
+ M151.service.UserService
 M151/controller/BuysController.java
  M151.controller.BuysController
 M151/repo/BuysRepo.java
  M151.repo.BuysRepo
 M151/controller/UserController.java
  M151.controller.UserController
-M151/service/LoginService.java
- M151.service.LoginService
 M151/service/BuysService.java
  M151.service.BuysService
 M151/model/Buys.java
  M151.model.Buys
-M151/service/UserService.java
- M151.service.UserService
 M151/dto/BuyWithArticleAndUser.java
  M151.dto.BuyWithArticleAndUser

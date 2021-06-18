@@ -10,14 +10,28 @@ public class Buys {
     @Column(name = "id", nullable = false, updatable = false)
     private long purchaseID;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Article article;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private User user;
+
+    protected Buys() {}
 
     public Buys(Article article, User user) {
         this.article = article;
         this.user = user;
+    }
+
+    public long getPurchaseID() {
+        return purchaseID;
+    }
+
+    public Article getArticle() {
+        return article;
+    }
+
+    public User getUser() {
+        return user;
     }
 }
